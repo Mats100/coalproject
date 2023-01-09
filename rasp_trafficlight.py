@@ -4,7 +4,6 @@ import time
 class RaspLight:
 
     def __init__(self) -> None:
-        super().__init__()
         GPIO.setmode(GPIO.BCM)
         GPIO.setwarnings(False)
         self.PIN_19 = 19
