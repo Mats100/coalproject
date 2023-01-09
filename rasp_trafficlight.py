@@ -1,7 +1,6 @@
 import RPi.GPIO as GPIO
 import time
 
-
 class RaspLight:
 
     def __init__(self) -> None:
@@ -24,24 +23,17 @@ class RaspLight:
     def control_lights(self):
         try:
             while True:
-                GPIO.output(self.PIN_22, True)
                 GPIO.output(self.PIN_19, True)
-                print("Red1 is on")
+                GPIO.output(self.PIN_22, True)
                 time.sleep(3)
                 GPIO.output(self.PIN_19, False)
-                print("red1 is off")
                 GPIO.output(self.PIN_20, True)
-                print("yellow1 is on")
                 time.sleep(1)
                 GPIO.output(self.PIN_20, False)
-                print("yellow1 is off")
                 GPIO.output(self.PIN_21, True)
-                print("green1 is on")
                 time.sleep(5)
                 GPIO.output(self.PIN_21, False)
-                print("green1 is off")
                 GPIO.output(self.PIN_20, True)
-                print("yellow1 is on")
                 time.sleep(2)
                 GPIO.output(self.PIN_20, False)
                 GPIO.output(self.PIN_19, True)
@@ -52,16 +44,13 @@ class RaspLight:
                 time.sleep(1)
                 GPIO.output(self.PIN_23, False)
                 GPIO.output(self.PIN_24, True)
-                print("Green 2 is on")
                 time.sleep(5)
-                print("After sleep")
                 GPIO.output(self.PIN_24, False)
-
-                time.sleep(1)
                 GPIO.output(self.PIN_23, True)
                 time.sleep(1)
                 GPIO.output(self.PIN_23, False)
                 GPIO.output(self.PIN_22, True)
+                GPIO.output(self.PIN_22, False)
         except KeyboardInterrupt as ki:
             GPIO.cleanup()
             print("You  have exited successfully", ki)
