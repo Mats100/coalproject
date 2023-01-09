@@ -49,8 +49,6 @@ class RaspLight:
                 GPIO.output(self.PIN_23, True)
                 time.sleep(1)
                 GPIO.output(self.PIN_23, False)
-                GPIO.output(self.PIN_22, True)
-                GPIO.output(self.PIN_22, False)
         except KeyboardInterrupt as ki:
             GPIO.cleanup()
             print("You  have exited successfully", ki)
